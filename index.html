@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiche Portfolio — SAÉ 2.03 — AL SHAQSI Hussain</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --blue:#0f6cbf; --blue-dark:#0a4f8f; --blue-light:#e8f1fb;
+    --magenta:#c0398b; --magenta-light:#fbe9f3;
+    --ink:#1b2733; --muted:#5d6b7a; --border:#e2e8f0;
+    --bg:#f3f6fa; --card:#ffffff;
+    --mono:'DM Mono',ui-monospace,monospace;
+    --font:'Hanken Grotesk',system-ui,-apple-system,Segoe UI,sans-serif;
+    --radius:14px;
+  }
+  body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .topbar{height:5px;background:linear-gradient(90deg,var(--blue),var(--magenta));}
+  .wrap{max-width:880px;margin:0 auto;padding:2.4rem 1.4rem 4rem;}
+
+  /* HERO */
+  .hero{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:2.2rem 2.2rem 2rem;box-shadow:0 1px 3px rgba(20,30,45,.04),0 16px 40px -28px rgba(20,30,45,.25);}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--magenta);font-weight:500;}
+  .hero h1{font-size:2.2rem;font-weight:800;letter-spacing:-.02em;margin:.5rem 0 .3rem;line-height:1.1;}
+  .hero .sub{font-size:1.05rem;font-weight:600;color:var(--blue);}
+  .meta{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid var(--border);font-size:.9rem;color:var(--muted);}
+  .meta b{color:var(--ink);font-weight:600;}
+  .badges{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.2rem;}
+  .badge{font-family:var(--mono);font-size:.72rem;background:var(--blue-light);color:var(--blue-dark);border:1px solid #cfe2f5;border-radius:999px;padding:3px 11px;font-weight:500;}
+
+  /* SECTIONS */
+  section{margin-top:2.4rem;}
+  .sec-head{display:flex;align-items:center;gap:.8rem;margin-bottom:1rem;}
+  .sec-num{flex-shrink:0;width:34px;height:34px;border-radius:9px;background:var(--magenta-light);color:var(--magenta);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;}
+  .sec-head h2{font-size:1.45rem;font-weight:800;letter-spacing:-.01em;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem 1.8rem;box-shadow:0 1px 3px rgba(20,30,45,.04);}
+  .card p{margin-bottom:.9rem;}
+  .card p:last-child{margin-bottom:0;}
+  h3{font-size:1.02rem;font-weight:700;color:var(--blue-dark);margin:1.3rem 0 .6rem;}
+  h3:first-child{margin-top:0;}
+  ul{list-style:none;margin:.2rem 0 .4rem;}
+  li{position:relative;padding-left:1.4rem;margin-bottom:.55rem;}
+  li::before{content:'';position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:2px;background:var(--blue);}
+  li b{font-weight:700;}
+
+  /* TABLE */
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius);}
+  table{width:100%;border-collapse:collapse;font-size:.88rem;}
+  thead th{background:var(--blue);color:#fff;text-align:left;font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;padding:.7rem .9rem;}
+  tbody td{padding:.8rem .9rem;border-bottom:1px solid var(--border);vertical-align:top;color:#33414f;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#f8fafc;}
+  td b{color:var(--ink);}
+  .proof{font-family:var(--mono);font-size:.78rem;color:var(--muted);}
+  .tag-cap{display:inline-block;background:var(--magenta-light);color:var(--magenta);font-family:var(--mono);font-size:.68rem;padding:1px 7px;border-radius:5px;}
+  .tag-cap a{margin-right:.5rem;}
+  .tag-cap a:last-child{margin-right:0;}
+
+  /* ARCHITECTURE DIAGRAM */
+  .diagram{margin:1.2rem 0 .4rem;}
+  .vm{border:1.5px dashed #b9c6d6;border-radius:12px;padding:1rem 1rem .8rem;position:relative;margin-bottom:.4rem;}
+  .vm-label{position:absolute;top:-.7rem;left:1rem;background:var(--card);padding:0 .5rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;color:var(--muted);}
+  .flow{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;}
+  .node{flex:1;min-width:90px;background:var(--blue-light);border:1px solid #cfe2f5;border-radius:9px;padding:.6rem .5rem;text-align:center;}
+  .node .n-t{font-weight:700;font-size:.85rem;color:var(--blue-dark);}
+  .node .n-s{font-size:.68rem;color:var(--muted);font-family:var(--mono);}
+  .node.db{background:var(--magenta-light);border-color:#f0c8e0;}
+  .node.db .n-t{color:var(--magenta);}
+  .node.browser{background:#fff;border-color:var(--border);}
+  .node.browser .n-t{color:var(--ink);}
+  .arrow{color:var(--muted);font-weight:700;flex-shrink:0;}
+  .net-arrow{text-align:center;font-family:var(--mono);font-size:.7rem;color:var(--muted);margin:.3rem 0;}
+
+  /* SCREENSHOT PLACEHOLDER */
+  .shot{margin-top:1rem;border:2px dashed #c3d0df;border-radius:10px;background:#fafcfe;padding:1.4rem;text-align:center;color:var(--muted);}
+  .shot .icon{font-size:1.6rem;}
+  .shot .cap{font-family:var(--mono);font-size:.78rem;margin-top:.3rem;}
+
+  /* ENGLISH CALLOUT */
+  .english{background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid var(--border);border-left:4px solid var(--magenta);border-radius:var(--radius);padding:1.6rem 1.8rem;}
+  .en-flag{font-family:var(--mono);font-size:.72rem;font-weight:500;color:var(--magenta);letter-spacing:.1em;text-transform:uppercase;}
+
+  footer{margin-top:2.6rem;text-align:center;font-family:var(--mono);font-size:.74rem;color:var(--muted);}
+
+  @media(max-width:600px){.hero h1{font-size:1.7rem;}.card{padding:1.2rem 1.2rem;}.flow{flex-direction:column;}.arrow{transform:rotate(90deg);}}
+</style>
+</head>
+<body>
+<div class="topbar"></div>
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <p class="eyebrow">Fiche Portfolio Individuelle</p>
+    <h1>Mettre en place une solution informatique pour l'entreprise</h1>
+    <p class="sub">SAÉ 2.03 — Déploiement &amp; interface d'un gestionnaire de notes</p>
+    <div class="meta">
+      <span><b>AL SHAQSI Hussain</b></span>
+      <span>Groupe&nbsp;: <b>RT112</b></span>
+      <span>Semestre 2</span>
+      <span>2025 / 2026</span>
+    </div>
+    <div class="badges">
+      <span class="badge">Django</span><span class="badge">Python</span><span class="badge">Nginx</span>
+      <span class="badge">Gunicorn</span><span class="badge">MySQL</span><span class="badge">Debian 13</span>
+      <span class="badge">systemd</span><span class="badge">Git</span><span class="badge">VirtualBox</span>
+    </div>
+  </header>
+
+  <!-- 1. CONTEXTE -->
+  <section>
+    <div class="sec-head"><span class="sec-num">1</span><h2>Contexte du projet</h2></div>
+    <div class="card">
+      <p>Dans le cadre de la SAÉ 2.03, notre équipe avait pour mission de mettre en place une solution informatique complète pour une entreprise. Nous avons développé puis déployé une application web : un <b>gestionnaire de notes</b> destiné à un IUT.</p>
+      <p>L'application permet de gérer, via des opérations <b>CRUD</b> complètes (créer, lire, modifier, supprimer), les étudiants, les enseignants, les unités d'enseignement (UE), les ressources, les examens et les notes, ainsi que de générer un relevé de notes pour un étudiant. Elle est développée avec le framework <b>Django</b> (Python) et s'appuie sur une base de données <b>MySQL</b>.</p>
+      <p>Au-delà du développement, la SAÉ exigeait un déploiement dans une architecture réaliste de production : le service web et la base de données hébergés sur <b>deux machines distinctes</b> (service web et base de données séparés).</p>
+      <p>Le travail a été mené en équipe, avec une répartition des tâches via des branches Git. Ma responsabilité personnelle portait sur le <b>déploiement du serveur web</b> et sur <b>l'interface</b> de l'application ; la machine hébergeant la base de données était gérée par un coéquipier.</p>
+
+      <!-- Architecture diagram -->
+      <div class="diagram">
+        <div class="flow" style="margin-bottom:.5rem">
+          <div class="node browser"><div class="n-t">Navigateur</div><div class="n-s">utilisateur</div></div>
+          <span class="arrow">→</span>
+          <div class="vm" style="flex:3;margin-bottom:0">
+            <span class="vm-label">VM 1 · Serveur web</span>
+            <div class="flow">
+              <div class="node"><div class="n-t">Nginx</div><div class="n-s">reverse proxy · :80</div></div>
+              <span class="arrow">→</span>
+              <div class="node"><div class="n-t">Gunicorn</div><div class="n-s">WSGI · socket</div></div>
+              <span class="arrow">→</span>
+              <div class="node"><div class="n-t">Django</div><div class="n-s">application</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="net-arrow">↕ connexion réseau</div>
+        <div class="vm" style="max-width:220px;margin:0 auto">
+          <span class="vm-label">VM 2 · Base de données</span>
+          <div class="flow"><div class="node db" style="min-width:auto"><div class="n-t">MySQL</div><div class="n-s">les données</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. TÂCHES -->
+  <section>
+    <div class="sec-head"><span class="sec-num">2</span><h2>Mes tâches réalisées personnellement</h2></div>
+    <div class="card">
+      <p>Ma contribution s'est concentrée sur trois volets : le déploiement et l'administration du serveur web, la conception de l'interface, et la gestion de version.</p>
+
+      <h3>a · Déploiement et administration du serveur</h3>
+      <ul>
+        <li><b>Mise en place de la VM :</b> installation d'un serveur Debian 13 (création de l'utilisateur, configuration réseau).</li>
+        <li><b>Pile de production :</b> installation et configuration de Nginx (serveur web / reverse proxy), Gunicorn (serveur d'application WSGI) et Django.</li>
+        <li><b>Service systemd :</b> configuration de Gunicorn en service avec un socket Unix, pour un démarrage automatique au boot et un redémarrage en cas de panne.</li>
+        <li><b>Configuration Nginx :</b> service des fichiers statiques et redirection des requêtes dynamiques vers Gunicorn via le socket.</li>
+        <li><b>Configuration Django (settings.py) :</b> connexion à la base MySQL distante (HOST pointant vers la seconde VM), ALLOWED_HOSTS, désactivation du mode debug en production, chemins des fichiers statiques et media.</li>
+        <li><b>Portabilité :</b> export de la VM (format OVA), mise en place d'un réseau interne VirtualBox pour relier les deux machines, et écriture d'un script bash (start.sh) lançant et vérifiant les services en une seule commande.</li>
+      </ul>
+
+      <h3>b · Conception de l'interface</h3>
+      <ul>
+        <li><b>Refonte du style (CSS) :</b> création d'une identité visuelle propre et professionnelle, distincte des rendus génériques.</li>
+        <li><b>Tableau de bord :</b> indicateurs cliquables, actions rapides et affichage des derniers étudiants inscrits, pour une page d'accueil utile plutôt que vide.</li>
+      </ul>
+
+      <h3>c · Gestion de version et collaboration</h3>
+      <ul>
+        <li><b>Git :</b> travail sur une branche dédiée, fusion avec la branche principale, et résolution de conflits (notamment sur les templates et la configuration).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. PREUVES -->
+  <section>
+    <div class="sec-head"><span class="sec-num">3</span><h2>Preuves d'acquisition de compétences</h2></div>
+    <div class="card">
+      <p>Ce travail m'a permis de mobiliser plusieurs compétences du référentiel du BUT Informatique. Le tableau ci-dessous associe chaque compétence à une réalisation concrète et à sa preuve.</p>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Compétence</th><th>Ce que j'ai réalisé</th><th>Preuve</th></tr></thead>
+          <tbody>
+            <tr><td><b>Administrer des systèmes communicants</b></td><td>Déploiement et configuration du serveur de production : Nginx (reverse proxy), Gunicorn (WSGI), service systemd, pare-feu ufw, architecture web/BD séparée sur deux VM.</td><td class="proof">Fichiers gunicorn.service / config Nginx<span class="tag-cap"><a href="image/nginx.png" target="_blank">nginx</a><a href="image/socket.png" target="_blank">socket</a><a href="image/gservice.png" target="_blank">service</a></span></td></tr>
+            <tr><td><b>Réaliser / optimiser une application</b></td><td>Participation à l'application Django (CRUD) et refonte complète de l'interface (CSS), amélioration du tableau de bord.</td><td class="proof">Pages de l'application, code des templates et des vues. <span class="tag-cap"><a href="image/app.png" target="_blank">capture</a></span></td></tr>
+            <tr><td><b>Gérer des données de l'information</b></td><td>Configuration de la connexion à la base MySQL distante (settings.py) et application des migrations Django.</td><td class="proof">Bloc DATABASES de settings.py, tables créées. <span class="tag-cap"><a href="image/databases.png" target="_blank">capture</a></span></td></tr>
+            <tr><td><b>Collaborer au sein d'une équipe</b></td><td>Utilisation de Git : branche dédiée, fusion avec la branche principale, résolution de conflits.</td><td class="proof">Historique et branches Git. <span class="tag-cap"><a href="image/gith.png" target="_blank">historique</a>           <a href="image/gitbranch.png" target="_blank">branche</a></span></td></tr>
+            <tr><td><b>Conduire un projet</b></td><td>Automatisation du lancement (script start.sh), procédure de déploiement reproductible et documentée.</td><td class="proof">Script start.sh, procédure pull → migrate → collectstatic → restart.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Qualité de la réalisation</h3>
+      <ul>
+        <li><b>Sécurité :</b> l'application ne tourne pas en tant qu'administrateur (root) mais sous un utilisateur dédié ; le mode debug est désactivé en production.</li>
+        <li><b>Fiabilité :</b> le service systemd démarre automatiquement au boot et redémarre seul en cas de panne.</li>
+        <li><b>Maintenabilité :</b> le déploiement est reproductible (processus basé sur Git) et automatisé par un script, ce qui rend la solution robuste et non pas seulement fonctionnelle.</li>
+      </ul>
+
+      <div class="shot" style="padding:0; border:none; background:transparent; text-align:center;">
+        <img src="image/app.png" alt="Capture d'écran de l'application" style="max-width:100%; max-height:500px; width:auto; height:auto; border-radius:10px; box-shadow:0 4px 12px rgba(20,30,45,.15); display:block; margin:0 auto;">
+        <div class="cap" style="margin-top:0.8rem;"><a href="image/app.png" target="_blank">Voir en pleine résolution</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. BILAN -->
+  <section>
+    <div class="sec-head"><span class="sec-num">4</span><h2>Bilan et réflexion</h2></div>
+    <div class="card">
+      <p>C'est lors de la phase de déploiement que j'ai le plus appris, souvent en résolvant des erreurs réelles : un service refusant de démarrer parce qu'il référençait un utilisateur inexistant, le pilote MySQL de Python échouant à se compiler faute de bibliothèques système, ou encore Git refusant de fusionner à cause de fichiers qui n'auraient jamais dû être versionnés. Chaque problème m'a obligé à comprendre une couche supplémentaire du système.</p>
+      <p>Je suis désormais capable d'expliquer le trajet complet d'une requête : du navigateur jusqu'à Nginx, puis Gunicorn, puis Django, et enfin la base de données distante.</p>
+    </div>
+  </section>
+
+  <!-- 5. ENGLISH -->
+  <section>
+    <div class="sec-head"><span class="sec-num">5</span><h2>English summary</h2></div>
+    <div class="english">
+      <p class="en-flag">English</p>
+      <p style="margin-top:.5rem">As part of the SAÉ 2.03, our team developed and deployed a web-based grade-management application for an IUT, built with Django (Python) and a MySQL database. My personal role was the production deployment and the user interface. I configured a Debian server running Nginx as a reverse proxy in front of Gunicorn, which runs the Django application, while the database was hosted on a separate virtual machine — a “separated web service and database” architecture. I set Gunicorn up as a systemd service for automatic startup and recovery, managed deployment through Git, and redesigned the application's interface. This project strengthened my skills in system administration, application deployment, and teamwork.</p>
+    </div>
+  </section>
+
+  <footer>SAÉ 2.03 — BUT Informatique · AL SHAQSI Hussain · RT112</footer>
+</div>
+</body>
+</html>
